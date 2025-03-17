@@ -1,14 +1,15 @@
 /*! tailwindcss v4.0.9 | MIT License | https://tailwindcss.com */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap") layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-gray-200: oklch(0.928 0.006 264.531);
-    --color-white: #fff;
+    --color-white: #F5F9FA;
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
@@ -59,13 +60,16 @@
       --font-mono--font-variation-settings
     );
     --color-dark-700: #090e34b3;
-    --color-dark: #111928;
-    --color-dark-2: #1f2a37;
+    --color-dark: #232222;
+    --color-dark-2: #0F0808;
     --color-dark-3: #374151;
     --color-dark-6: #9ca3af;
-    --color-primary: #3758f9;
+    --color-primary: #232222;
+    --color-primary-gray: ##E5E5E5;
     --color-blue-dark: #1b44c8;
-    --color-secondary: #13c296;
+    --color-secondary: #CCFF00;
+    --color-secondary-blue: #0033FF;
+    --color-secondary-orange: #FF6600;
     --color-body-color: #637381;
     --color-body-secondary: #8899a8;
     --color-stroke: #dfe4ea;
@@ -1176,6 +1180,12 @@
   .text-white\/60 {
     color: color-mix(in oklab, var(--color-white) 60%, transparent);
   }
+  .text-blue{
+    color: var(--color-secondary-blue);
+  }
+  .text-white\/60 {
+    color: color-mix(in oklab, var(--color-white) 60%, transparent);
+  }
   .italic {
     font-style: italic;
   }
@@ -1268,6 +1278,7 @@
         --tw-scale-y: 125%;
         --tw-scale-z: 125%;
         scale: var(--tw-scale-x) var(--tw-scale-y);
+        transition: ease-in 0.3s;
       }
     }
   }
@@ -1288,7 +1299,7 @@
   .group-hover\:text-primary {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
-        color: var(--color-primary);
+        color: var(--color-secondary);
       }
     }
   }
@@ -1296,6 +1307,13 @@
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         color: var(--color-white);
+      }
+    }
+  }
+  .group-hover\:text-secondary {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-secondary);
       }
     }
   }
@@ -1391,6 +1409,13 @@
       }
     }
   }
+  .hover\:bg-secundary {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-secondary);
+      }
+    }
+  }
   .hover\:bg-white {
     &:hover {
       @media (hover: hover) {
@@ -1444,6 +1469,21 @@
     &:hover {
       @media (hover: hover) {
         opacity: 70%;
+      }
+    }
+  }
+  .hover\:scale-105 {
+    &:hover {
+      @media (hover: hover) {
+        transform: scale(1.05);
+        transition: ease-in 0.3s;
+      }
+    }
+  }
+  .hover\:scale-125 {
+    &:hover {
+      @media (hover: hover) {
+        transform: scale(1.25);
       }
     }
   }
@@ -2339,6 +2379,13 @@
       color: var(--color-white);
     }
   }
+  .dark\:group-hover\:text-secondary{
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-secondary);
+      }
+    }
+  }
   .dark\:shadow-none {
     &:where(.dark, .dark *) {
       --tw-shadow: 0 0 #0000;
@@ -2368,6 +2415,15 @@
       &:hover {
         @media (hover: hover) {
           color: var(--color-white);
+        }
+      }
+    }
+  }
+  .dark\:hover\:text-blue {
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-secondary-blue);
         }
       }
     }
@@ -2402,7 +2458,7 @@
     cursor: pointer;
   }
   body {
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
   }
 }
 .sticky {
@@ -2445,7 +2501,7 @@
   &:where(.dark, .dark *) {
     &:hover {
       @media (hover: hover) {
-        color: var(--color-primary);
+        color: var(--color-secondary-blue);
       }
     }
   }
@@ -2454,7 +2510,7 @@
   opacity: 70%;
 }
 .sticky #navbarCollapse li .ud-menu-scroll.active {
-  color: var(--color-primary);
+  color: var(--color-secondary-blue);
   opacity: 100%;
 }
 .sticky .loginBtn {

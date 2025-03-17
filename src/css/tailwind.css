@@ -65,7 +65,8 @@
     --color-dark-3: #374151;
     --color-dark-6: #9ca3af;
     --color-primary: #232222;
-    --color-primary-gray: ##E5E5E5;
+    --color-primary-gray: #E5E5E5;
+    --color-primary-white: #F5F9FA;
     --color-blue-dark: #1b44c8;
     --color-secondary: #CCFF00;
     --color-secondary-blue: #0033FF;
@@ -854,8 +855,20 @@
   .bg-primary\/\[0\.08\] {
     background-color: color-mix(in oklab, var(--color-primary) 8%, transparent);
   }
+  .bg-primary-gray {
+    background-color: var(--color-primary-gray);
+  }
+  .bg-primary-white {
+    background-color: var(--color-primary-white);
+  }
   .bg-secondary {
     background-color: var(--color-secondary);
+  }
+  .bg-secondary-blue {
+    background-color: var(--color-secondary-blue);
+  }
+  .bg-secondary-orange {
+    background-color: var(--color-secondary-orange);
   }
   .bg-stroke {
     background-color: var(--color-stroke);
@@ -906,6 +919,22 @@
   }
   .fill-current {
     fill: currentColor;
+  }
+  .fill-black {
+    fill: black;
+  }
+  .fill-white {
+    fill: var(--color-white);
+  }
+  .dark\:fill-white{
+    &:where(.dark, .dark *) {
+      fill: var(--color-white);
+    }
+  }
+  .dark\:fill-black{
+    &:where(.dark, .dark *) {
+      fill: black;
+    }
   }
   .stroke-current {
     stroke: currentColor;
@@ -1224,6 +1253,10 @@
     --tw-shadow: 0px 10px 20px 0px var(--tw-shadow-color, rgba(92, 115, 160, 0.07));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
+  .shadow-testimonial-2 {
+    --tw-shadow: 0px 10px 20px 0px var(--tw-shadow-color, rgba(255, 103, 0, 0.07));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
   .ring-primary {
     --tw-ring-color: var(--color-primary);
   }
@@ -1409,10 +1442,17 @@
       }
     }
   }
-  .hover\:bg-secundary {
+  .hover\:bg-secondary {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-secondary);
+      }
+    }
+  }
+  .hover\:bg-secondary-orange {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-secondary-orange);
       }
     }
   }
@@ -2337,6 +2377,11 @@
       border-color: var(--color-dark-3);
     }
   }
+  .dark\:bg-primary {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-primary);
+    }
+  }
   .dark\:bg-dark {
     &:where(.dark, .dark *) {
       background-color: var(--color-dark);
@@ -2355,6 +2400,11 @@
   .dark\:bg-dark-700 {
     &:where(.dark, .dark *) {
       background-color: var(--color-dark-700);
+    }
+  }
+  .dark\:bg-secondary-blue{
+    &:where(.dark, .dark *) {
+      background-color: var(--color-secondary-blue);
     }
   }
   .dark\:bg-white {
@@ -2424,6 +2474,24 @@
       &:hover {
         @media (hover: hover) {
           color: var(--color-secondary-blue);
+        }
+      }
+    }
+  }
+  .dark\:hover\:bg-secondary {
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-secondary);
+        }
+      }
+    }
+  }
+  .dark\:hover\:bg-secondary-blue {
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-secondary-blue);
         }
       }
     }
@@ -2511,7 +2579,7 @@
 }
 .sticky #navbarCollapse li .ud-menu-scroll.active {
   color: var(--color-secondary-blue);
-  opacity: 100%;
+  opacity: 70%;
 }
 .sticky .loginBtn {
   color: var(--color-dark);
@@ -2587,7 +2655,7 @@
   transition-timing-function: var(--ease-out);
   &:hover {
     @media (hover: hover) {
-      background-color: var(--color-primary);
+      background-color: var(--color-secondary-orange);
     }
   }
   &:hover {

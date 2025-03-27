@@ -2055,6 +2055,11 @@
       width: 100%;
     }
   }
+  .lg\:w-screen {
+    @media (width >= 960px) {
+      width: 100vw;
+    }
+  }
   .lg\:max-w-full {
     @media (width >= 960px) {
       max-width: 100%;

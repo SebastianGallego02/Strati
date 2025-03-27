@@ -2462,6 +2462,11 @@
       background-color: var(--color-secondary-blue);
     }
   }
+  .dark\:bg-secondary-orange{
+    &:where(.dark, .dark *) {
+      background-color: var(--color-secondary-orange);
+    }
+  }
   .dark\:bg-primary-gray{
     &:where(.dark, .dark *) {
       background-color: var(--color-primary-gray);
